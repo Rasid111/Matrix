@@ -11,7 +11,7 @@ main{
     flex-wrap: wrap;
     flex-direction: column;
     height: 70vh;
-    width: 20vw;
+    width: 100vw;
     color: white;
 }
 .left{
@@ -34,22 +34,51 @@ footer{
     background-color: blue;
 }
 
+@media (max-width: 1000px) {
+    header{
+        height: 20vh;
+    }
+    main {
+        flex-direction: row;
+    }
+
+    .main {
+        order: -1;
+        width: 100vw;
+        height: 40vh;
+    }
+
+    .left, .right {
+        width: 50vw;
+        height: 30vh;
+    }
+    footer{
+        height: 20vh;
+    }
+}
+
 @media (max-width: 600px) {
+    header{
+        height: 20vh;
+    }
     main{
         flex-direction: row;
-        height: 45vh;
-        width: 100vw;  
+        height: 60vh;
+        width: 100%;  
     }
     .left{
         width: 100vw;
-        height: 15vh;
+        height: 20vh;
     }
     .main{
         width: 100vw;
-        height: 15vh;
+        height: 20vh;
     }
     .right{
         width: 100vw;
-        height: 15vh;
+        height: 20vh;
+    }
+    footer{
+        height: 20vh;
     }
 }
