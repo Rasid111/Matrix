@@ -1,0 +1,288 @@
+body{
+    margin: 0;
+}
+.top{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    ul{
+        width: 25%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 30px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        > li{
+            display: inline-block;
+            > a{
+                color: black;
+                text-decoration: none;
+                transition: 0.5s;
+                > svg{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            > a:hover{
+                color: orange;
+                transition: 0.5s;
+            }
+        }
+    }
+    > .left{
+        display: flex;
+        width: 25vw;
+    }
+    > .logo{
+        display: inline-block;
+        width: auto;
+    }
+    > .right{
+        display: flex;
+        justify-content: flex-end;
+        width: 25vw;
+        > ul{
+            justify-content: flex-end;
+        }
+    }
+}
+nav{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >ul{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        gap: 40px;
+        >li{
+            display: inline-block;
+            > a{
+                font-family:sans-serif;
+                font-weight: 550;
+                text-decoration: none;
+                color: black;
+                transition: 0.5s;
+            }
+            > a:hover{
+                color: orange;
+                transition: 0.5s;
+            }
+        }
+    }
+}
+main{
+    .banner{
+        display: flex;
+        justify-content: center;
+        gap: 20px;;
+        > .left{
+            width: 35vw;
+            height: 45,48153409090909vw;
+            display: inline-block;
+            > img{
+                width: 35vw;
+                height: 45,48153409090909vw;
+                border-radius: 20px;
+                object-fit: contain;
+            }
+        }
+        > .right{
+            width: 35vw;
+            height: 45,48153409090909vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            > .content{
+                margin-left: 40px;
+                width: 80%;
+                >span{
+                    font-size: 20px;
+                }
+                > h1{
+                    font-size: 40px;
+                    font-family: sans-serif;
+                }
+                > a{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 200px;
+                    height: 60px;
+                    background-color: orange;
+                    border-radius: 50px;
+                    color: white;
+                    text-decoration: none;
+                    font-family: sans-serif;
+                    font-weight: 600;
+                    transition: 0.5s;
+                }
+                > a:hover{
+                    background-color: black;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+    >h2{
+        text-align: center;
+    }
+    .chairs{
+        padding-left: 100px;
+        padding-right: 100px;
+        >ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            >li{
+                width: 20vw;
+                display:inline-block;
+                .img-container{
+                    overflow: hidden;
+                    position: relative;
+                    >a{
+                        >img{
+                            border-radius: 10px;
+                            width: 20vw;
+                        }
+                    }
+                }
+                >a{
+                    text-decoration: none;
+                    >.product-name{
+                        display: inline-block;
+                        padding-top: 10px;
+                        text-decoration: none;
+                        color: black;
+                    }
+                    >.product-name:hover{
+                        color:orange;
+                    }
+                }
+                >.price{
+                    display: inline-block;
+                    padding-top: 10px;
+                    text-decoration: none;
+                    color: grey;
+                }
+            }
+        }
+    }
+}
+
+.add-to-wishlist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: white;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    top: 30px;
+    right: 15px;
+    transition: 0.5s;
+    opacity:0;
+}
+.inspect{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: white;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    top: 75px;
+    right: 15px;
+    transition: 0.5s;
+    opacity:0;
+}
+.add-to-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: white;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    bottom: -15px;
+    right: 15px;
+    transition: 0.5s;
+    opacity:0;
+}
+.img-container:hover{
+    >.add-to-wishlist{
+        opacity: 100%;
+        top: 15px;
+        transition: 0.5s;
+    }
+    >.inspect{
+        opacity: 100%;
+        top: 60px;
+        transition: 0.5s;
+    }
+    >.add-to-cart{
+        opacity: 100%;
+        bottom: 20px;
+        transition: 0.5s;
+    }
+}
+@media (max-width: 1000px){
+    nav{
+        display: none;
+    }
+    main{
+        >.banner{
+            flex-direction: column;
+            align-items: center;
+            >.left{
+                width: 80vw;
+                >img{
+                    width: 80vw;
+                }
+            }
+            >.right{
+                width: 80vw;
+                >.content{
+                    margin: 0;
+                    display:flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .chairs{
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+        ul{
+            >li{
+                width: 25vw !important;
+                img{
+                    width:25vw !important;
+                }
+            }
+            >li:nth-child(4){
+                display:none !important;
+            }
+        }
+    }
+}
