@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poco</title>   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark bg-body-tertiary" style="background-color: black !important;">
+            <div class=" mx-5 container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-start" style="background-color: black !important;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Home
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Home 1</a></li>
+                        <li><a class="dropdown-item" href="#">Home 2</a></li>
+                        <li><a class="dropdown-item" href="#">Home 3</a></li>
+                        <li><a class="dropdown-item" href="#">Home 4</a></li>
+                        <li><a class="dropdown-item" href="#">Home 5</a></li>
+                        <li><a class="dropdown-item" href="#">Home 6</a></li>
+                        <li><a class="dropdown-item" href="#">Home 7</a></li>
+                        <li><a class="dropdown-item" href="#">Home 8</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Shop
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Shop - 3 Cloumn</a></li>
+                          <li><a class="dropdown-item" href="#">Shop - 4 Column</a></li>
+                          <li><a class="dropdown-item" href="#">Shop - Grid</a></li>
+                          <li><a class="dropdown-item" href="#">Shop - Listing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Blog
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Blog List</a></li>
+                        <li><a class="dropdown-item" href="#">Blog Grid</a></li>
+                        <li><a class="dropdown-item" href="#">Blog Single</a></li>
+                        </ul>
+                    </li><li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Page
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Faq</a></li>
+                        <li><a class="dropdown-item" href="#">Icons</a></li>
+                        <li><a class="dropdown-item" href="#">Our Teams</a></li>
+                        <li><a class="dropdown-item" href="#">Our History</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            <div style="width: 200px">
+              <a class="navbar-brand" href="#"><img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2020/10/logo_svg.svg" alt="" style="object-fit: contain;"></a>
+            </div>
+            <div class="d-none d-lg-block">
+                <ul style="list-style: none; display: flex; flex-direction: row; justify-content: space-between; width: 10vw; align-content: center;">
+                    <li class="circle-li"><a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="color: white" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                        </svg></a></li>
+                    <li class="circle-li"><a href=""><svg xmlns="http://www.w3.org/2000/svg" style="color: white" width="30" height="30" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                      </svg></a></li>
+                    <li class="circle-li"><a href=""><svg xmlns="http://www.w3.org/2000/svg" style="color: white" width="30" height="30" fill="currentColor" class="bi bi-basket-fill" viewBox="0 0 16 16">
+                        <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z"/>
+                      </svg></a></li>
+                </ul>
+            </div>
+            <div class="d-lg-none">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16" style="color: white;">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                    </svg>
+                </a>
+            </div>
+            </div>
+          </nav>
+    </header>
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container" style="background-color: #331300;">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h2 class="my-2">ITALIAN FOOD</h2>
+                            <h3 class="my-2">WITH SPECIAL SAUCE</h3>
+                            <span class="my-1">Italian food with special sauce is a flavor you can find only in POCO</span>
+                            <br>
+                            <a href="#" class="btn btn-primary my-5" style="border: none; background-color:orange; color: black; font-size: 12px; height: 40px; width: 120px; display:flex; align-items: center; justify-content: center;">ORDER NOW</a>
+                            <div class="contact d-flex flex-row my-3">
+                                <div style="border-radius: 100%; background-color: green; width: 50px; height:50px; display:flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16" style="color: white;">
+                                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span>Quick order 24/7</span>
+                                    <h2 style="font-size: 20px">+1 716-904-4450</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/rev_home8_6.png" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container" style="background-color: #331300;">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h1 class="my-5">SUPER DELICIOUS</h1>
+                            <h3 class="my-2">SPECIAL PIZZA</h3>
+                            <a href="#" class="btn btn-primary my-5" style="border: none; background-color:orange; color: black; font-size: 12px; height: 40px; width: 120px; display:flex; align-items: center; justify-content: center;">ORDER NOW</a>
+                            <div class="contact d-flex flex-row my-3">
+                                <div style="border-radius: 100%; background-color: green; width: 50px; height:50px; display:flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16" style="color: white;">
+                                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span>Quick order 24/7</span>
+                                    <h2 style="font-size: 20px">+1 716-904-4450</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/rev_home8_8.png" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item align-middle">
+                <div class="container" style="background-color: #331300;">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h2 class="my-2">CRISP AND</h2>
+                            <h3 class="my-2">FRESH CHICKEN MASTER CHIEF</h3>
+                            <a href="#" class="btn btn-primary my-5" style="border: none; background-color:orange; color: black; font-size: 12px; height: 40px; width: 120px; display:flex; align-items: center; justify-content: center;">ORDER NOW</a>
+                            <div class="contact d-flex flex-row my-3">
+                                <div style="border-radius: 100%; background-color: green; width: 50px; height:50px; display:flex; align-items: center; justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16" style="color: white;">
+                                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span>Quick order 24/7</span>
+                                    <h2 style="font-size: 20px">+1 716-904-4450</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/rev_home8_9.png" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            <main>
+                <div class="container mt-5 offers">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_banner-img1.png" class="card-img" alt="Card Image 1">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">SPECIAL FOR YOU MONSTER PIZZA</h3>
+                                    <a href="#" class="btn btn-primary">ORDER NOW</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_banner-img4.png" class="card-img" alt="Card Image 2">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title mt-5">BURGER COMBO</h3>
+                                    <h3 class="card-text">3.90 ONLY</h3>
+                                    <a href="#" class="btn btn-primary">ORDER NOW</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_banner-img5.png" class="card-img" alt="Card Image 3">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title">Food Menu</h3>
+                                    <p class="card-text">This weekend only</p>
+                                    <a href="#" class="btn btn-primary">ORDER NOW</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container pt-5 mb-5" style="height: 250px; background-color: green;">
+                    <div class="row justify-content-evenly align-items-center">
+                        <div class="col-md-3">
+                            <select class="form-select">
+                                <option selectd value="1 people">1 people</option>
+                                <option value="2 people">2 people</option>
+                                <option value="3 people">3 people</option>
+                                <option value="4 people">4 people</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <input class="col-12" type="date">
+                        </div>
+                        <div class="col-md-3">
+                            <input class="col-12" type="time">
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <button class="btn" style="background-color: orange; width: 100%;">BOOK A TABLE</button>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center my-4">
+                        <span>Booking request +39-055-123456 or fill out the order form</span>
+                    </div>
+                    <div class="col-12">
+                        <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/h5_opentable.svg" alt="">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h2 style="font-family: 'Norican'; color: orange;">HotFresh</h2>
+                    <h2>Shop our favorites</h2>
+                </div>
+                <div class="container favorites">
+                    <div class="row gy-5">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2020/08/47-1-450x450.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">Summer Pizza</h5>
+                                <p class="card-text">Shrimp, Red Capsicum, Green Capsicum, Onion, Chilli flakes, Lemon...</p>
+                                <a href="#" class="btn btn-warning">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-none d-md-block">
+                            <div class="card">
+                                <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2020/08/54.1-450x450.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">Water Bottle</h5>
+                                <p class="card-text">Investing in a reusable water bottle that you can refill throughout the day...</p>
+                                <a href="#" class="btn btn-warning">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-none d-md-block">
+                            <div class="card">
+                                <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2020/08/53-1-450x450.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">Vegge Lover</h5>
+                                <p class="card-text">Extra-virgin olive oil, garlic, mozzarella cheese, onions, mushrooms, green olives...</p>
+                                <a href="#" class="btn btn-warning">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-none d-md-block">
+                            <div class="card">
+                                <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2020/08/52-1-450x450.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">Tropicana Juice</h5>
+                                <p class="card-text">View great tasting Tropicana Orange Juice and Juice Drink Products...</p>
+                                <a href="#" class="btn btn-warning">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid menu m-0 pb-5 mb-5">
+                    <div class="text-center">
+                        <h2 class="pt-5" style="font-family: 'Norican'; color: orange;">OurMenu</h2>
+                        <h2 class="pb-3" style="color:white">Poco's menu board</h2>
+                    </div>
+                    <div class="row mb-5 align-items-center justify-content-evenly">
+                        <div class="col-12 col-md-5 rounded mb-5 mb-md-0" style="background-color: #fff;">
+                            <h2>Special Combo:</h2>
+                            <ul>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-5 rounded" style="background-color: #fff;">
+                            <h2>Special Combo:</h2>
+                            <ul>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row align-items-center justify-content-evenly">
+                        <div class="col-12 col-md-5 rounded mb-5 mb-md-0" style="background-color: #fff;">
+                            <h2>Special Combo:</h2>
+                            <ul>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-5 rounded" style="background-color: #fff;">
+                            <h2>Special Combo:</h2>
+                            <ul>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="container d-flex align-content-center">
+                                        <div style="display: inline-block;">
+                                            <img src="https://demo2.pavothemes.com/poco/wp-content/uploads/2022/12/h8_menulist1.jpg" style="display: inline-block;" alt="">
+                                        </div>
+                                        <div style="display: inline-block;">
+                                            <h3>Happy Lunch Combo</h3>
+                                            <span>Burger, coke, fries, chicken nuggets</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
