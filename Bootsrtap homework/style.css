@@ -30,7 +30,7 @@
 }
 .offers{
     >.row>div>.card{
-        height: 400px;
+        height: 300px;
         border-radius: 10%;
     }
     >.row>div:nth-child(1)>.card{
