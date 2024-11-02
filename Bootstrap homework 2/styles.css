@@ -1,0 +1,114 @@
+header{
+    background-image: url("https://sandbox-tailwind-template.netlify.app/assets/img/photos/bg16.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    clip-path: ellipse(100% 81% at 48% 0%);
+    height: 70vh;
+    .btn-link{
+        text-decoration: none;
+        color: white;
+    }
+}
+.cards{
+    margin-top: -200px;
+    .btn{
+        background-color: #00000000;
+    }
+    >.row{
+        >div:nth-child(1){
+            .card{
+                .card-img-top{
+                    color: rgb(230 104 179);
+                }
+                .btn{
+                    color: rgb(230 104 179);
+                    border:none;
+                }
+            }
+        }
+        >div:nth-child(2){
+            .card{
+                .card-img-top{
+                    color: rgb(160 124 197);
+                }
+                .btn{
+                    color: rgb(160 124 197);
+                    border:none;
+                }
+            }
+        }
+        >div:nth-child(3){
+            .card{
+                .card-img-top{
+                    color: rgb(247 139 119);
+                }
+                .btn{
+                    color: rgb(247 139 119);
+                    border:none;
+                }
+            }
+        }
+        >div:nth-child(4){
+            .card{
+                .card-img-top{
+                    color: rgb(69 196 160);
+                }
+                .btn{
+                    color: rgb(69 196 160);
+                    border:none;
+                }
+            }
+        }
+    }
+}
+#reasons{
+    .carousel-inner{
+        >.carousel-item:nth-child(1){
+            .btn{
+                background-color: rgb(230, 104, 179);
+            }
+        }
+        >.carousel-item:nth-child(2){
+            .btn{
+                background-color: rgb(160, 124, 197);
+            }
+        }
+        >.carousel-item:nth-child(3){
+            .btn{
+                background-color: rgb(69, 196, 160);
+            }
+        }
+    }
+}
+.reviews{
+    margin-top: -50px;
+}
+.projects{
+    .btn-link{
+        text-decoration: none;
+        color: black;
+    }
+}
+.difference{
+    height: 100%;
+}
+.community{
+    background-image: url("https://sandbox-tailwind-template.netlify.app/assets/img/photos/bg16.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.footer{
+    >.row{
+        >div{
+            >ul{
+                >li{
+                    >a{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
