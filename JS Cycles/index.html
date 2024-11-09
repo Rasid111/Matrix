@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cycles</title>
+</head>
+<body>
+    <div id="filters">
+        <input type="text" placeholder="max-price" id="maxPrice">
+        <select name="rating" id="rating">
+            <option value="NaN">all rating</option>
+            <option value="1">1 star</option>
+            <option value="2">2 stars</option>
+            <option value="3">3 stars</option>
+            <option value="4">4 stars</option>
+            <option value="5">5 stars</option>
+        </select>
+        <select name="category" id="category">
+            <option value="undefined">all categories</option>
+            <option value="men's clothing">men's clothing</option>
+            <option value="jewelery">jewelery</option>
+            <option value="electronics">electronics</option>
+            <option value="women's clothing">women's clothing</option>
+        </select>
+        <span></span>
+        <div>
+            <button id="submit">Submit</button>
+        </div> 
+    </div>
+    <div class="products"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
