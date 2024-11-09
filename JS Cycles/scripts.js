@@ -267,11 +267,11 @@ let error = document.querySelector("#filters>span");
 
 let priceFilter = document.querySelector("#maxPrice");
 priceFilter.addEventListener("input", (ev) => {
+    priceValue = parseFloat(ev.target.value)
     if (ev.target.value === "") {
         error.style.display = "none";
         return;
     }
-    priceValue = parseFloat(ev.target.value)
     if (isNaN(priceValue)) {
         error.style.display = "block";
         error.innerText = "Enter a proper value";
