@@ -1,4 +1,4 @@
-const productsArr = [
+                    const productsArr = [
     {
         id: 1,
         title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -302,7 +302,7 @@ submitButton.addEventListener("click", (ev) => {
         filteredProductsArr = filteredProductsArr.filter((product) => product.price <= priceValue);
     if (!(isNaN(ratingValue) || ratingValue === undefined))
         filteredProductsArr = filteredProductsArr.filter((product) => product.rating.rate >= ratingValue);
-    if (!(categoryValue === undefined || categoryValue === "undefined"))
+    if (!(categoryValue === undefined || categoryValue ===   "undefined"))
         filteredProductsArr = filteredProductsArr.filter((product) => product.category === categoryValue);
 
     products.innerHTML = "";
