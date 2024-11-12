@@ -408,22 +408,60 @@ submitButton.addEventListener("click", (ev) => {
     //     products.appendChild(product);
     // }
 
-    //solution 6
+    // solution 6
 
-    filteredProductsArr.forEach((item) => {
-        product = document.createElement("div");
-        product.innerHTML = `<div class="text">
-                                <span>Id: ${item.id}</span>
-                                <span>Title: ${item.title}</span>
-                                <span>Price: ${item.price}</span>
-                                <span>Description: ${item.description}</span>
-                                <span>Category: ${item.category}</span>
-                                <span>Rating: ${item.rating.rate}</span>
-                                <span>Reviews: ${item.rating.count}</span>
-                            </div>
-                            <div class="img">
-                            <img src=${item.image} alt="img">
-                            </div>`;
-        products.appendChild(product);
-    })
+    // filteredProductsArr.forEach((item) => {
+    //     product = document.createElement("div");
+    //     product.innerHTML = `<div class="text">
+    //                             <span>Id: ${item.id}</span>
+    //                             <span>Title: ${item.title}</span>
+    //                             <span>Price: ${item.price}</span>
+    //                             <span>Description: ${item.description}</span>
+    //                             <span>Category: ${item.category}</span>
+    //                             <span>Rating: ${item.rating.rate}</span>
+    //                             <span>Reviews: ${item.rating.count}</span>
+    //                         </div>
+    //                         <div class="img">
+    //                         <img src=${item.image} alt="img">
+    //                         </div>`;
+    //     products.appendChild(product);
+    // })
+
+    // solution 7
+
+    // filteredProductsArr.map((item) => {
+    //     product = document.createElement("div");
+    //     product.innerHTML = `<div class="text">
+    //                             <span>Id: ${item.id}</span>
+    //                             <span>Title: ${item.title}</span>
+    //                             <span>Price: ${item.price}</span>
+    //                             <span>Description: ${item.description}</span>
+    //                             <span>Category: ${item.category}</span>
+    //                             <span>Rating: ${item.rating.rate}</span>
+    //                             <span>Reviews: ${item.rating.count}</span>
+    //                         </div>
+    //                         <div class="img">
+    //                         <img src=${item.image} alt="img">
+    //                         </div>`;
+    //     products.appendChild(product);
+    // });
+
+    // solution 7
+
+    filteredProductsArr.filter((item) => {
+            product = document.createElement("div");
+            product.innerHTML = `<div class="text">
+                                    <span>Id: ${item.id}</span>
+                                    <span>Title: ${item.title}</span>
+                                    <span>Price: ${item.price}</span>
+                                    <span>Description: ${item.description}</span>
+                                    <span>Category: ${item.category}</span>
+                                    <span>Rating: ${item.rating.rate}</span>
+                                    <span>Reviews: ${item.rating.count}</span>
+                                </div>
+                                <div class="img">
+                                <img src=${item.image} alt="img">
+                                </div>`;
+            products.appendChild(product);
+    });
 });
