@@ -111,6 +111,56 @@ let languages = {
     }
 }
 
+function translate(lang){
+    document.querySelectorAll("header>.container")[0].querySelectorAll(".dropdown-toggle").forEach((item, index) => {
+        item.innerText = lang.nav[index];
+    });
+    document.querySelectorAll("header>.container")[1].querySelector("h1").innerText = lang.titles[0].header;
+    document.querySelectorAll("header>.container")[1].querySelector("span").innerText = lang.titles[0].span;
+    document.querySelectorAll("header>.container")[1].querySelector("button").innerText = lang.titles[0].button;
+    document.querySelectorAll("body>.container")[0].querySelectorAll(".card").forEach((item, index) => {
+        item.querySelector("h5").innerText = lang.cards[index];
+    });
+    document.querySelectorAll("body>.container")[1].querySelector("span").innerText = lang.titles[1].span;
+    document.querySelectorAll("body>.container")[1].querySelector("h1").innerText = lang.titles[1].header;
+    document.querySelectorAll("#reasons>.container>.row>div").forEach((item, index) => {
+        item.querySelector("h5").innerText = lang.reasons[index];
+    });
+    document.querySelectorAll("#reasons .carousel-item").forEach((item, index) => {
+        item.querySelector("h4").innerText = lang.reasons[index];
+    });
+    document.querySelector("body>.container-fluid h1").innerText = lang.stats.h1;
+    document.querySelector("body>.container-fluid h4").innerText = lang.stats.h4;
+    document.querySelectorAll("body>.container-fluid h5").forEach((item, index) => {
+        item.innerText = lang.stats.h5[index];
+    });
+    document.querySelectorAll(".reviews .carousel-item").forEach((item, index) => {
+        item.querySelector("h5").innerText = lang.reviews[index];
+    })
+    document.querySelectorAll(".title")[2].querySelector("h1").innerText = lang.titles[2].header;
+    document.querySelectorAll(".title")[2].querySelector("span").innerText = lang.titles[2].span;
+
+    document.querySelectorAll("body>.container")[4].querySelectorAll("p").forEach((item, index) => {
+        item.innerText = lang.latestProjects[index];
+    });
+    document.querySelector(".difference h1").innerText = lang.difference.h1;
+    document.querySelector(".difference span").innerText = lang.difference.span;
+    document.querySelectorAll(".difference h4").forEach((item, index) => {
+        item.innerText = lang.difference.h4[index];
+    });
+    document.querySelector(".community h5").innerText = lang.community.h5;
+    document.querySelector(".community h1").innerText = lang.community.h1;
+    document.querySelector(".community button").innerText = lang.community.button;
+    document.querySelectorAll(".footer>.row>div")[0].querySelectorAll("h6")[1].innerText = lang.footer[0].rights;
+    document.querySelectorAll(".footer>.row>div")[1].querySelector("h4").innerText = lang.footer[1].h4;
+    document.querySelectorAll(".footer>.row>div")[2].querySelector("h4").innerText = lang.footer[2].h4;
+    document.querySelectorAll(".footer>.row>div")[2].querySelectorAll("a").forEach((item, index) => {
+        item.innerText = lang.footer[2].links[index];
+    });
+    document.querySelectorAll(".footer>.row>div")[3].querySelector("h4").innerText = lang.footer[3].h4;
+    document.querySelectorAll(".footer>.row>div")[3].querySelector("h6").innerText = lang.footer[3].h6;
+    document.querySelectorAll(".footer>.row>div")[3].querySelector("button").innerText = lang.footer[3].button;
+}
 
 document.querySelectorAll("#language li .dropdown-item").forEach((item) => {
     item.addEventListener("click", (ev) => {
@@ -121,63 +171,15 @@ document.querySelectorAll("#language li .dropdown-item").forEach((item) => {
             switch (language) {
                 case "EN":
                     language = "EN";
-                    location.reload();
+                    translate(languages.EN)
                     break;
                 case "AZ":
                     language = "AZ";
-                    let lang = languages.AZ;
-                    document.querySelectorAll("header>.container")[0].querySelectorAll(".dropdown-toggle").forEach((item, index) => {
-                        item.innerText = lang.nav[index];
-                    });
-                    document.querySelectorAll("header>.container")[1].querySelector("h1").innerText = lang.titles[0].header;
-                    document.querySelectorAll("header>.container")[1].querySelector("span").innerText = lang.titles[0].span;
-                    document.querySelectorAll("header>.container")[1].querySelector("button").innerText = lang.titles[0].button;
-                    document.querySelectorAll("body>.container")[0].querySelectorAll(".card").forEach((item, index) => {
-                        item.querySelector("h5").innerText = lang.cards[index];
-                    });
-                    document.querySelectorAll("body>.container")[1].querySelector("span").innerText = lang.titles[1].span;
-                    document.querySelectorAll("body>.container")[1].querySelector("h1").innerText = lang.titles[1].header;
-                    document.querySelectorAll("#reasons>.container>.row>div").forEach((item, index) => {
-                        item.querySelector("h5").innerText = lang.reasons[index];
-                    });
-                    document.querySelectorAll("#reasons .carousel-item").forEach((item, index) => {
-                        item.querySelector("h4").innerText = lang.reasons[index];
-                    });
-                    document.querySelector("body>.container-fluid h1").innerText = lang.stats.h1;
-                    document.querySelector("body>.container-fluid h4").innerText = lang.stats.h4;
-                    document.querySelectorAll("body>.container-fluid h5").forEach((item, index) => {
-                        item.innerText = lang.stats.h5[index];
-                    });
-                    document.querySelectorAll(".reviews .carousel-item").forEach((item, index) => {
-                        item.querySelector("h5").innerText = lang.reviews[index];
-                    })
-                    document.querySelectorAll(".title")[2].querySelector("h1").innerText = lang.titles[2].header;
-                    document.querySelectorAll(".title")[2].querySelector("span").innerText = lang.titles[2].span;
-                    
-                    document.querySelectorAll("body>.container")[4].querySelectorAll("p").forEach((item, index) => {
-                        item.innerText = lang.latestProjects[index];
-                    });
-                    document.querySelector(".difference h1").innerText = lang.difference.h1;
-                    document.querySelector(".difference span").innerText = lang.difference.span;
-                    document.querySelectorAll(".difference h4").forEach((item, index) => {
-                        item.innerText = lang.difference.h4[index];
-                    });
-                    document.querySelector(".community h5").innerText = lang.community.h5;
-                    document.querySelector(".community h1").innerText = lang.community.h1;
-                    document.querySelector(".community button").innerText = lang.community.button;
-                    document.querySelectorAll(".footer>.row>div")[0].querySelectorAll("h6")[1].innerText = lang.footer[0].rights;
-                    document.querySelectorAll(".footer>.row>div")[1].querySelector("h4").innerText = lang.footer[1].h4;
-                    document.querySelectorAll(".footer>.row>div")[2].querySelector("h4").innerText = lang.footer[2].h4;
-                    document.querySelectorAll(".footer>.row>div")[2].querySelectorAll("a").forEach((item, index) => {
-                        item.innerText = lang.footer[2].links[index];
-                    });
-                    document.querySelectorAll(".footer>.row>div")[3].querySelector("h4").innerText = lang.footer[3].h4;
-                    document.querySelectorAll(".footer>.row>div")[3].querySelector("h6").innerText = lang.footer[3].h6;
-                    document.querySelectorAll(".footer>.row>div")[3].querySelector("button").innerText = lang.footer[3].button;
+                    translate(languages.AZ)
                     break;
                 default:
                     break;
             }
         }
-    })
-})
+    });
+});
