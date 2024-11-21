@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="light" class="light" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,24 +113,22 @@
                 <div class="col-1 d-none d-lg-block text-center">
                     <div class="dropdown text-center">
                         <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Blog
+                            Theme
                         </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <ul id="Theme" class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Light</a></li>
+                            <li><a class="dropdown-item dark" href="#">Dark</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-1 d-none d-lg-block text-center">
                     <div class="dropdown text-center">
                         <button class="btn btn-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Blocks
+                            Account
                         </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <ul id="Account" class="dropdown-menu">
+                            <li><a data-bs-toggle="modal" data-bs-target="#loginModal" class="dropdown-item" href="#">Log In</a></li>
+                            <li><a data-bs-toggle="modal" data-bs-target="#signupModal" class="dropdown-item" href="#">Sign Up</a></li>
                         </ul>
                     </div>
                 </div>
@@ -159,6 +157,52 @@
             </div>
         </div>
     </header>
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">Log In</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" placeholder="Login">
+                <div class="input-group mt-3">
+                    <input type="password" class="form-control" placeholder="Password">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">👁</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">log In</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Sign Up</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" placeholder="Login">
+                <div class="input-group mt-3">
+                    <input type="password" class="form-control" placeholder="Password">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">👁</button>
+                </div>
+                <div class="input-group mt-3">
+                    <input type="password" class="form-control" placeholder="Password">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">👁</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Sign Up</button>
+            </div>
+          </div>
+        </div>
+    </div>
     <div class="cards container">
         <div class="row g-3 align-items-center justify-content-center">
             <div class="col-12 col-md-6 col-xl-3">
@@ -353,7 +397,7 @@
             </div>
         </div>
     </div>
-    <div class="reviews container border rounded bg-white px-0 pb-5 mb-5">
+    <div class="reviews container border rounded bg-white px-0 mb-5">
         <div class="row g-0">
             <div class="col-12 col-lg-6">
                 <img class="object-fit-contain w-100 h-100" src="https://sandbox-tailwind-template.netlify.app/assets/img/photos/tm2.jpg" alt="">
@@ -405,7 +449,7 @@
                 <div class="card border-0">
                     <img src="https://sandbox-tailwind-template.netlify.app/assets/img/photos/pd8.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#" class="btn btn-link p-0">Mollis Ipsum Mattis</a>
+                        <a href="#" class="btn p-0">Mollis Ipsum Mattis</a>
                         <p class="text-body-tertiary card-text">MAGAZINE, BOOK</p>
                     </div>
                 </div>
@@ -414,7 +458,7 @@
                 <div class="card border-0">
                     <img src="https://sandbox-tailwind-template.netlify.app/assets/img/photos/pd9.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#" class="btn btn-link p-0">Impsum Ultricies Cursus</a>
+                        <a href="#" class="btn p-0">Impsum Ultricies Cursus</a>
                         <p class="text-body-tertiary card-text">PACKAGING</p>
                     </div>
                 </div>
@@ -423,7 +467,7 @@
                 <div class="card border-0">
                     <img src="https://sandbox-tailwind-template.netlify.app/assets/img/photos/pd10.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#" class="btn btn-link p-0">Inceptos Euismod Egestas</a>
+                        <a href="#" class="btn p-0">Inceptos Euismod Egestas</a>
                         <p class="text-body-tertiary card-text">STATIONARY, BRANDING</p>
                     </div>
                 </div>

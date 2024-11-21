@@ -1,8 +1,10 @@
 let language = "EN";
+let theme = "Light";
 
 let languages = {
     EN: {
-        nav: ["Demos", "Pages", "Projects", "Blog", "Blocks", "Language"],
+        nav: ["Demos", "Pages", "Projects", "Theme", "Account", "Language"],
+        theme: ["Light", "Dark"],
         titles:[
             {
                 header: "We bring solutions to make life easier",
@@ -56,7 +58,8 @@ let languages = {
         ]
     },
     AZ:{
-        nav: ["Demolar", "Səhifələr", "Projectler", "Blog", "Bloklar", "Dil"],
+        nav: ["Demolar", "Səhifələr", "Projectler", "Tema", "Akaunt", "Dil"],
+        theme: ["Açıq", "Tünd"],
         titles:[
             {
                 header:"Biz həyatı asanlaşdırmaq üçün həllər təqdim edirik",
@@ -115,6 +118,13 @@ function translate(lang){
     document.querySelectorAll("header>.container")[0].querySelectorAll(".dropdown-toggle").forEach((item, index) => {
         item.innerText = lang.nav[index];
     });
+    document.querySelectorAll("#Theme>li>.dropdown-item").forEach((item, index) => {
+        item.innerText = lang.theme[index];
+    });
+    
+    document.querySelectorAll("#Theme>li>dropdown-item").forEach((item, index) => {
+        item.innerText = lang.theme[index];
+    })
     document.querySelectorAll("header>.container")[1].querySelector("h1").innerText = lang.titles[0].header;
     document.querySelectorAll("header>.container")[1].querySelector("span").innerText = lang.titles[0].span;
     document.querySelectorAll("header>.container")[1].querySelector("button").innerText = lang.titles[0].button;
@@ -162,7 +172,7 @@ function translate(lang){
     document.querySelectorAll(".footer>.row>div")[3].querySelector("button").innerText = lang.footer[3].button;
 }
 
-document.querySelectorAll("#language li .dropdown-item").forEach((item) => {
+document.querySelectorAll("#language>li>.dropdown-item").forEach((item) => {
     item.addEventListener("click", (ev) => {
         if (language === ev.target.innerText)
             return;
@@ -181,5 +191,52 @@ document.querySelectorAll("#language li .dropdown-item").forEach((item) => {
                     break;
             }
         }
+    });
+});
+
+document.querySelectorAll("#Theme>li>.dropdown-item").forEach((item) => {
+    item.addEventListener("click", (ev) => {
+        if (theme === ev.target.innerText)
+            return;
+        else{
+            theme = ev.target.innerText;
+            if (theme === "Light" || theme == "Açıq") {
+                html = document.querySelector("html");
+                html.dataset.bsTheme = "light";
+                html.className = "";
+                html.classList.add("light")
+                html.querySelector("div:has(.save-time)").classList.replace("bg-dark-subtle", "bg-light")
+                html.querySelector(".reviews").classList.replace("bg-dark", "bg-white");
+                return;
+            }
+            if (theme === "Dark" || theme === "Tünd") {
+                html = document.querySelector("html");
+                html.dataset.bsTheme = "dark";
+                html.className = "";
+                html.classList.add("dark")
+                html.querySelector("div:has(.save-time)").classList.replace("bg-light", "bg-dark-subtle")
+                html.querySelector(".reviews").classList.replace("bg-white", "bg-dark");
+                return;
+            }
+        }
+    });
+});
+
+document.querySelector("#loginModal .modal-body .input-group button").addEventListener("click", (ev) => {
+    input = document.querySelector("#loginModal .modal-body .input-group input");
+    if (input.type === "password")
+        input.type = "text";
+    else
+        input.type = "password";
+});
+
+document.querySelectorAll("#signupModal .modal-body .input-group button").forEach((item, index) => {
+    console.log(item);
+    item.addEventListener("click", (ev) => {
+        input = document.querySelectorAll("#signupModal .modal-body .input-group input")[index];
+        if (input.type === "password")
+            input.type = "text";
+        else
+            input.type = "password";
     });
 });
