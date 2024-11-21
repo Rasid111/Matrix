@@ -1,6 +1,6 @@
 class Cow {
     constructor() {
-        this.milkPerDay = 1;
+        this.milkPerDay = 3;
         this.milkCost = 3;
     }
     get profitPerDay() {
@@ -40,7 +40,7 @@ class Farmer {
         this.totalMilkSold += this.milkPerDay;
         this.totalGain += this.profitPerDay;
         this.totalWorkedDays ++;
-        if (this.money >= Cow.cowCost) {
+        while (this.money >= Cow.cowCost) {
             this.cows.push(new Cow());
             this.updateMilkPerDay();
             this.updateProfitPerDay();
@@ -78,7 +78,7 @@ document.querySelector("#work").addEventListener("click", () => farmer.work(days
 
 
 // const milkCost = 3;
-// const milkPerCow = 1;
+// const milkPerCow = 3;
 // const cowsCost = 300;
 
 // function work(daysCount){
@@ -95,7 +95,7 @@ document.querySelector("#work").addEventListener("click", () => farmer.work(days
 //         totalMilkSold += milkPerDay;
 //         totalGain += profitPerDay;
 //         totalWorkedDays++;
-//         if (money >= 300) {
+//         while (money >= 300) {
 //             money -= 300;
 //             cowsCount++;
 //             milkPerDay = milkPerCow * cowsCount;
