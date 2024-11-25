@@ -2,3 +2,10 @@
     color: white;
     background-color:blueviolet;
 }
+.lined{
+    text-decoration: line-through;
+}
+#taskList{
+    height: 200px;
+    overflow-y:scroll;
+}

@@ -7,10 +7,10 @@ let count = 0;
 document.querySelector("#clear").onclick = () => {
     taskList.innerHTML = "";
     count = 0;
-    taskCount.innerText = `You have ${count} pending tasks`;
+    taskCount.innerText = `You have ${count} tasks`;
 }
 add.onclick = () => {
-    if (input.value === "")
+    if (input.value.trim("") === "")
         return;
     let task = document.createElement("div");
     task.classList.add("row");
@@ -21,10 +21,13 @@ add.onclick = () => {
                         <button class="btn btn-danger d-none" type="button">Remove todo</button>
                       </div>`;
     input.value = "";
+    task.querySelector("span").onclick = (ev) => {
+        console.log(ev.target.classList.toggle("lined"));
+    }
     task.querySelector("button").onclick = () => {
         task.remove();
         count--;
-        taskCount.innerText = `You have ${count} pending tasks`;
+        taskCount.innerText = `You have ${count} tasks`;
     }
     task.onmouseover = () => {
         task.querySelector("span").classList.remove("rounded");
@@ -36,5 +39,5 @@ add.onclick = () => {
     }
     taskList.appendChild(task);
     count++;
-    taskCount.innerText = `You have ${count} pending tasks`;
+    taskCount.innerText = `You have ${count} tasks`;
 }
