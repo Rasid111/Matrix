@@ -224,19 +224,27 @@ document.querySelectorAll("#Theme>li>.dropdown-item").forEach((item) => {
 
 document.querySelector("#loginModal .modal-body .input-group button").addEventListener("click", (ev) => {
     input = document.querySelector("#loginModal .modal-body .input-group input");
-    if (input.type === "password")
+    if (input.type === "password") {
+        ev.target.innerText = "👁️"
         input.type = "text";
-    else
+    }
+    else {
+        ev.target.innerText = "➖"
         input.type = "password";
+    }
 });
 
 document.querySelectorAll("#signupModal .modal-body .input-group button").forEach((item, index) => {
     console.log(item);
     item.addEventListener("click", (ev) => {
         input = document.querySelectorAll("#signupModal .modal-body .input-group input")[index];
-        if (input.type === "password")
+        if (input.type === "password") {
+            ev.target.innerText = "👁️"
             input.type = "text";
-        else
+        }
+        else {
+            ev.target.innerText = "➖"
             input.type = "password";
+        }
     });
 });
