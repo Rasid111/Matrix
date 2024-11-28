@@ -8,8 +8,74 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="modal fade" id="accountModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="logIn">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Log In</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control" placeholder="Login">
+                        <div class="input-group mt-3">
+                            <input type="password" class="form-control" placeholder="Password">
+                            <button class="btn btn-outline-secondary" type="button">➖</button>
+                        </div>
+                        <span class="error-message hidden mt-1" id="authError">Incorrect login info</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">log In</button>
+                    </div>
+                </div>
+                <div id="signUp">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Sign Up</h1>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control" placeholder="Login">
+                        <span id="loginError" class="error-message hidden mt-1">This login already exists</span>
+                        <span id="emptyLoginError" class="error-message hidden mt-1">Write something</span>
+                        <div class="input-group mt-3">
+                            <input type="password" class="form-control" placeholder="Password">
+                            <button class="btn btn-outline-secondary" type="button">➖</button>
+                        </div>
+                        <div class="input-group mt-3">
+                            <input type="password" class="form-control" placeholder="Password">
+                            <button class="btn btn-outline-secondary" type="button">➖</button>
+                        </div>
+                        <span id="passwordError" class="error-message hidden mt-1">Passwords must match</span>
+                        <span id="emptySignUpError" class="error-message hidden mt-1">Write something</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Sign Up</button>
+                    </div>
+                </div>
+                <div id="logOut" class="hidden">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Log Out</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span>You are authorised</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Log Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container w-25 mt-5 rounded-1 border">
-        <h1 class="m-3">Todo App</h1>
+        <div class="row align-items-center justify-content-between">
+            <div class="col-7">
+                <h1 class="m-3 d-inline-block">Todo App</h1>
+            </div>
+            <div class="col-5">
+                <button id="mode" type="button" class="btn">Light</button>
+                <button data-bs-toggle="modal" data-bs-target="#accountModal" id="account" type="button" class="btn">Account</button>
+            </div>
+        </div>
         <div class="container">
             <div class="row gx-1 mb-3 justify-content-between">
                 <div class="col-10">
@@ -18,17 +84,21 @@
                 <div class="col-2">
                     <button id="add" class="rounded-1 border-1 w-100">Add</button>
                 </div>
+                <span id="todoError" class="error-message hidden">Write something</span>
             </div>
         </div>
         <div id="taskList" class="container">
         </div>
         <div class="container mb-3">
             <div class="row justify-content-between">
-                <div id="taskCount" class="col-8">
+                <div id="taskCount" class="col-6">
                     You have 0 tasks
                 </div>
-                <div class="col-4 text-end">
-                    <button id="clear" class="rounded-1 border-1">Clear all</button>
+                <div class="col-3 p-1 text-end">
+                    <button id="save" class="d-block w-100 rounded-1 border-1">Save</button>
+                </div>
+                <div class="col-3 p-1 text-end">
+                    <button id="clear" class="d-block w-100 rounded-1 border-1">Clear</button>
                 </div>
             </div>
         </div>
