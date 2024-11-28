@@ -11,19 +11,71 @@ const emptySignUpError = document.getElementById("emptySignUpError");
 const todoError = document.getElementById("todoError");
 const accountModal = document.getElementById("accountModal");
 const save = document.getElementById("save");
-const logIn = document.querySelector("#logIn");
-const signUp = document.querySelector("#signUp");
-const logOut = document.querySelector("#logOut");
+const logIn = document.getElementById("logIn");
+const signUp = document.getElementById("signUp");
+const logOut = document.getElementById("logOut");
 const html = document.querySelector("html");
 const body = document.querySelector("body");
+const lang = document.getElementById("lang")
+const langData = {
+    en: {
+        account: "Account",
+        add: "Add",
+        save: "Save",
+        clear: "Clear",
+        lang: "AZ"
+    },
+    enInner: {
+        input: "Add your new todo",
+        taskCount(count) {
+            if (count === 1)
+                return "You have 1 pending task";
+            return `You have ${count} pending tasks`;
+        },
+        mode: {
+            light: "Light",
+            dark: "Dark",
+        }
+    },
+    az: {
+        account: "Akaunt",
+        add: "Əlavə et",
+        save: "Saxla",
+        clear: "Təmizlə",
+        lang: "EN"
+    },
+    azInner:{
+        input: "Yeni işinizi əlavə edin",
+        taskCount(count) {
+            if (count === 1)
+                return "Gözləyən 1 tapşırığınız var";
+            return `Gözləyən ${count} tapşırığınız var`;
+        },
+        mode: {
+            light: "Açıq",
+            dark: "Tünd",
+        }
+    }
+}
 
 let auth = null;
 let count = 0;
 let todos = [];
+let language = localStorage.getItem("lang");
+language = language===null?"en":language;
+changeLang(language);
 
 //copied
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/;`;
+}
+
 function getCookie(name) {
-    const cookies = document.cookie.split("; ");
+    let cookies = document.cookie;
+    cookies = cookies.split("; ");
     for (const cookie of cookies) {
         const [key, value] = cookie.split("=");
         if (key === name) {
@@ -31,6 +83,10 @@ function getCookie(name) {
         }
     }
     return null;
+}
+
+function deleteCookie(name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 
 auth = getCookie("auth");
@@ -63,7 +119,7 @@ if (theme === "light") {
 function clearTasks(){
     taskList.innerHTML = "";
     count = 0;
-    taskCount.innerText = `You have ${count} tasks`;
+    taskCount.innerText = langData[language + "Inner"].taskCount(count);
 }
 
 document.querySelector("#clear").onclick = () => {
@@ -86,13 +142,13 @@ function addTodo(value, checked) {
             count--;
         let todo = todos.find(item => item.value === ev.target.innerText);
         todo.checked = !todo.checked;
-        taskCount.innerText = `You have ${count} tasks`;
+        taskCount.innerText = langData[language + "Inner"].taskCount(count);
         ev.target.classList.toggle("lined");
     }
     task.querySelector("button").onclick = () => {
         if (!task.querySelector("span").classList.contains("lined")) {
             count--;
-            taskCount.innerText = `You have ${count} tasks`;
+            taskCount.innerText = langData[language + "Inner"].taskCount(count);
         }
         todos = todos.filter(todo => todo.value !== value);
         console.log(todos);
@@ -110,7 +166,7 @@ function addTodo(value, checked) {
     taskList.appendChild(task);
     if (!checked)
         count++;
-    taskCount.innerText = `You have ${count} tasks`;
+    taskCount.innerText = langData[language + "Inner"].taskCount(count);
 }
 
 add.onclick = (e) => {
@@ -221,7 +277,7 @@ signUp.querySelector(".modal-footer>button").onclick = () => {
         logIn.classList.add("hidden");
         signUp.classList.add("hidden");
         logOut.classList.remove("hidden");
-        document.cookie = `auth=${auth.username}`;
+        setCookie("auth", auth.username, 1);
     }
     else
         loginError.classList.remove("hidden");
@@ -238,7 +294,8 @@ logIn.querySelector(".modal-footer>button").onclick = () => {
         authError.classList.remove("hidden");
     else{
         auth = res;
-        document.cookie = `auth=${auth.username}`;
+        setCookie("auth", auth.username, 1);
+        
         todos = auth.todos;
         todos.forEach((todo) => {
             addTodo(todo.value, todo.checked);
@@ -268,11 +325,30 @@ logOut.querySelector(".modal-footer>button").onclick = () => {
     logIn.classList.remove("hidden");
     signUp.classList.remove("hidden");
     logOut.classList.add("hidden");
-    
-    // copied
-    document.cookie.split(';').forEach(cookie => {
-        const eqPos = cookie.indexOf('=');
-        const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
-        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
-    });
+    deleteCookie("auth");
+}
+
+
+function changeLang(langToChange) {
+    for (let key in langData[langToChange]) {
+        document.getElementById(key).innerText = langData[langToChange][key];
+    }
+    todoInput.placeholder = langData[langToChange+"Inner"].input;
+    document.getElementById("taskCount").innerText = langData[langToChange+"Inner"].taskCount(count);
+    return;
+}
+
+lang.onclick = () => {
+    if (language === "en"){
+        changeLang("az");
+        localStorage.setItem("lang", "az");
+        language = "az";
+        return;
+    }
+    if (language === "az"){
+        changeLang("en");
+        localStorage.setItem("lang", "en");
+        language = "en";
+        return;
+    }
 }
