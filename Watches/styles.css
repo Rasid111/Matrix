@@ -1,0 +1,74 @@
+#timeAnalog{
+    width: 200px;
+    height: 200px;
+}
+.dig, #second, #minute, #hour{
+    position: absolute;
+}
+#second{
+    top: -10%;
+    left: 45%;
+    font-size: 100px;
+    transform-origin: 50% 85%;
+}
+#minute{
+    top: 5%;
+    left: 45%;
+    font-size: 75px;
+    transform-origin: 50% 85%;
+}
+#hour{
+    top: 23%;
+    left: 46.5%;
+    font-size: 50px;
+    transform-origin: 50% 85%;
+    transform: rotate(45deg);
+}
+#dig1{
+    top: 5%;
+    right: 25%;
+}
+#dig2{
+    top: 25%;
+    right: 7%;
+}
+#dig3{
+    top: 50%;
+    right: 0;
+}
+#dig4{
+    bottom: 17%;
+    right: 10%;
+}
+#dig5{
+    bottom: 5%;
+    right: 27%;
+}
+#dig6{
+    bottom: 0;
+    left: 47%;
+}
+#dig7{
+    bottom: 5%;
+    left: 27%;
+}
+#dig8{
+    bottom: 17%;
+    left: 10%;
+}
+#dig9{
+    top: 50%;
+    left: 0;
+}
+#dig10{
+    top: 25%;
+    left: 7%;
+}
+#dig11{
+    top: 7%;
+    left: 22%;
+}
+#dig12{
+    top: 0;
+    left: 45%;
+}
