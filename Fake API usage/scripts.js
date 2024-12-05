@@ -66,7 +66,7 @@ async function loadProducts(products, pageState) {
                             </div>`
         products.appendChild(div);
         div.onclick = async () => {
-            URL = `https://dummyjson.com/products/${product.id}`
+            URL = `https://dummyjson.com/products/${product.id}`;
             response = await (await fetch(`${URL}`)).json();
             modal.querySelector(".modal-title").innerText = response.title;
             modal.querySelector(".modal-body").innerHTML = `<img src=${response.thumbnail} class="card-img-top" alt="...">
