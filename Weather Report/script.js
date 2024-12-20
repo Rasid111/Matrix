@@ -1,5 +1,5 @@
 const dateInput = document.getElementById("dateInput");
-const APIkey = "fbdb525ba4befc470ffdf22e78381fca";
+const APIkey = "---";
 const wheaterInfo = document.querySelector("#weatherInfo");
 const header = document.querySelector("#weatherInfo h1");
 const subHeader = document.querySelector("#weatherInfo h4");
