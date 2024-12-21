@@ -1,5 +1,7 @@
-function Hero() {
-    return(
+import React from "react"
+class Hero extends React.Component {
+    render() {
+        return(
         <>
             <div style={{backgroundImage: `url('../../public/assets/img/page-title-bg-1.png')`}} className="container-fluid text-white">
                 <div className="row">
@@ -12,6 +14,7 @@ function Hero() {
             </div>
         </>
     )
+    }
 }
 
 export default Hero;

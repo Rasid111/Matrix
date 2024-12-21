@@ -43,7 +43,7 @@ function App() {
       <Hero></Hero>
       <Carousel></Carousel>
       <CardCarousel></CardCarousel>
-      {reviews.map((review, index) => Review(review, index))}
+      {reviews.map((review, index) => <Review key={index} review = {review} />)}
     </>
   )
 }
