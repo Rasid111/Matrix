@@ -1,5 +1,5 @@
 const dateInput = document.getElementById("dateInput");
-const APIkey = "fbdb525ba4befc470ffdf22e78381fca";
+const APIkey = "---";
 const wheaterInfo = document.querySelector("#weatherInfo");
 const header = document.querySelector("#weatherInfo h1");
 const subHeader = document.querySelector("#weatherInfo h4");
@@ -50,12 +50,16 @@ function getPosition() {
 
 
 async function getWeatherInfo(coords, APIkey) {
-    const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${coords.latitude}&lon=${coords.longitude}&appid=${APIkey}&units=metric`;
+    let url = `https://api.openweathermap.org/data/3.0/onecall?lat=${coords.latitude}&lon=${coords.longitude}&appid=${APIkey}&units=metric`;
+    console.log(url);
+    
     return await (await fetch(url)).json();
 }
 
 async function getWeatherOverview(coords, APIkey) {
-    const url = `https://api.openweathermap.org/data/3.0/onecall/overview?lat=${coords.latitude}&lon=${coords.longitude}&appid=${APIkey}&units=metric`;
+    const url = `https://api.openweathermap.org/data/3.0/onecall/overview?lat=${coords.latitude}&lon=${coords.longitude}&appid=${APIkey}&units=metric`;    
+    console.log(url);
+    
     return await (await fetch(url)).json();
 }
 
@@ -133,7 +137,7 @@ function displayInfo(info, overview){
                             <div class="card-body">
                                 <p class="card-text">${day.summary}</p>
                                 <p class="card-text">${day.temp.day}°C</p>
-                                <button href="#" class="btn btn-primary mt-auto">More info</button>
+                                <button href="#" class="btn btn-light mt-auto">More info</button>
                             </div>
                         </div>`
         forecast.appendChild(col);
@@ -155,6 +159,18 @@ function displayInfo(info, overview){
 
 async function main() {
     coords = await getPosition();
+    
+    // // Oslo, Norway
+    // coords = {
+    //     latitude: 59.913868,
+    //     longitude: 10.752245
+    // }
+    // // Sydney, Australia
+    // coords = {
+    //     latitude: -35.280937,
+    //     longitude: 149.130005
+    // }
+
     let res = await getWeatherInfo(coords, APIkey);
     let overview = (await getWeatherOverview(coords, APIkey)).weather_overview;
     displayInfo(res, overview);
