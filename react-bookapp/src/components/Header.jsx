@@ -1,6 +1,7 @@
-function Header() {
-  return (
-    <header>
+import React from "react"
+class Header extends React.Component {
+  render() {
+    return <header>
         <nav className="navbar py-4 navbar-expand-lg bg-body-tertiary">
             <div className="container">
                 <a className="navbar-brand" href="#">
@@ -93,7 +94,7 @@ function Header() {
             </div>
         </nav>
     </header>
-  )
+  }
 }
 
 export default Header
