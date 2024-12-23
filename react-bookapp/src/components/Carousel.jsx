@@ -11,7 +11,7 @@ function Carousel() {
                 </div>
                 <div className="col-8 position-relative">
                     <div style={{backgroundImage: `url(${url.url})`, backgroundSize: "cover", height: "500px"}} className="container rounded mt-3">
-                        <div style={{left:0, bottom: "15px"}} className="container position-absolute p-0">
+                        <div style={{left:0, bottom: "15px"}} className="container position-absolute w-100 m-0 p-0">
                             <div className="row gy-2 justify-content-center">
                                 <div onClick={() => setUrl({id: 0,url: "/assets/img/carousel-bgs/service-lg-1.jpg"})} style={{height: "100px", backgroundImage: `url(${imgUrls[0]})`, backgroundSize: "cover"}} className="col-3 border border-white rounded"></div>
                                 <div onClick={() => setUrl({id: 1,url: "/assets/img/carousel-bgs/service-lg-2.jpg"})} style={{height: "100px", backgroundImage: `url(${imgUrls[1]})`, backgroundSize: "cover"}} className="col-3 border border-white rounded"></div>
