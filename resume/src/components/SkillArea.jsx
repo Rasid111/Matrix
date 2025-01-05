@@ -6,8 +6,8 @@ function SkillArea({src, title, text}){
         <Card className="text-center pt-3">
         <Container>
             <Row className="justify-content-center">
-                <Col className="rounded-3" xs={4} style={{backgroundColor: "rgb(55,74,74)"}}>
-                    <img src={src} alt={text} />
+                <Col className="rounded-3" xs={5} style={{backgroundColor: "rgb(55,74,74)"}}>
+                    <img className="w-100 objectfit-contain" src={src} alt={text} />
                 </Col>
             </Row>
         </Container>
