@@ -45,12 +45,12 @@ function Main({globalState}) {
                         </Container>
                     </Col>
                     <Col className="sticky-top h-100" style={{top:40}} xs={4}>
-                        <Card className="text-center">
-                            <Card.Img className="p-2" src="https://html.vikinglab.agency/ovro/assets/img/all-images/hero/hero-img1.png"/>
-                            <Card.Body>
-                                <Card.Title style={{fontSize: 30}}>Alex Carry</Card.Title>
-                                <Card.Text className="px-5" style={{fontSize: 16}}>Hi, I’m Alex, a dedicated UI/UX Designer with 10 years of experience creating meaningful digital experiences.</Card.Text>
-                                <Links className="mt-3"></Links>
+                        <Card className="text-center justfiy-contnet-center">
+                            <Card.Img style={{width: "70%"}} className="ms-auto me-auto pt-3 object-fit-contain" src="https://html.vikinglab.agency/ovro/assets/img/all-images/hero/hero-img1.png" alt="Alex Carry"/>
+                            <Card.Body className="p-0">
+                                <Card.Title style={{fontSize: 25}}>Alex Carry</Card.Title>
+                                <Card.Text className="px-5" style={{fontSize: 14}}>Hi, I’m Alex, a dedicated UI/UX Designer with 10 years of experience creating meaningful digital experiences.</Card.Text>
+                                <Links className="mt-1"></Links>
                                 <Button className="p-3 rounded-5 mt-3" variant="warning" style={{fontSize: 20}}>DOWNLOAD NOW</Button>
                                 <Card.Text className="px-5 mt-3" style={{fontSize: 16}}>© 2024 OVRO. All Rights Reserved.</Card.Text>
                             </Card.Body>
@@ -66,12 +66,12 @@ function Main({globalState}) {
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-start">Designing Intuitive</h1>
+                                    <h1 style={{fontSize: 60}} className="text-start">Designing Intuitive</h1>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-end">Experiences <strong>Inspire</strong></h1>
+                                    <h1 style={{fontSize: 60}} className="text-end">Experiences <strong>Inspire</strong></h1>
                                 </Col>
                             </Row>
                             <Row className="justify-content-end">
@@ -81,7 +81,7 @@ function Main({globalState}) {
                             </Row>
                             <Row className="justify-content-between align-items-center">
                                 <Col style={{height: "100px"}} className="position-relative">
-                                    <img style={{top: "45%", left:"9%"}} className="position-absolute" src="https://html.vikinglab.agency/ovro/assets/img/icons/arrow1.svg" alt="elements1"/>
+                                    <img style={{top: "45%", left:"11%"}} className="position-absolute" src="https://html.vikinglab.agency/ovro/assets/img/icons/arrow1.svg" alt="elements1"/>
                                     <img className="position-absolute" src="https://html.vikinglab.agency/ovro/assets/img/elements/elements1.png" alt="elements1"/>
                                 </Col>
                                 <Col xs={4}>
@@ -103,12 +103,12 @@ function Main({globalState}) {
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-start">Crafting Seamless</h1>
+                                    <h1 style={{fontSize: 60}} className="text-start">Crafting Seamless</h1>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-end">User <strong>Experiences</strong></h1>
+                                    <h1 style={{fontSize: 60}} className="text-end">User <strong>Experiences</strong></h1>
                                 </Col>
                             </Row>
                             <Row>
@@ -203,12 +203,12 @@ function Main({globalState}) {
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-start">Elevating Brands</h1>
+                                    <h1 style={{fontSize: 60}} className="text-start">Elevating Brands</h1>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-end">Intuitive <strong>Design</strong></h1>
+                                    <h1 style={{fontSize: 60}} className="text-end">Intuitive <strong>Design</strong></h1>
                                 </Col>
                             </Row>
                             <Row xs={1} className="g-3">
@@ -253,12 +253,12 @@ function Main({globalState}) {
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-start">The Tools Behind</h1>
+                                    <h1 style={{fontSize: 60}} className="text-start">The Tools Behind</h1>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-end">Exceptional <strong>Design</strong></h1>
+                                    <h1 style={{fontSize: 60}} className="text-end">Exceptional <strong>Design</strong></h1>
                                 </Col>
                             </Row>
                             <Row xs={3} className="g-3">
@@ -289,12 +289,12 @@ function Main({globalState}) {
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-start">Innovation Designs</h1>
+                                    <h1 style={{fontSize: 60}} className="text-start">Innovation Designs</h1>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-end">Real <strong>Results</strong></h1>
+                                    <h1 style={{fontSize: 60}} className="text-end">Real <strong>Results</strong></h1>
                                 </Col>
                             </Row>
                             <Row className="justify-content-center g-5">
@@ -323,12 +323,12 @@ function Main({globalState}) {
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-start">What Client Says</h1>
+                                    <h1 style={{fontSize: 60}} className="text-start">What Client Says</h1>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-end">About <strong>My Work</strong></h1>
+                                    <h1 style={{fontSize: 60}} className="text-end">About <strong>My Work</strong></h1>
                                 </Col>
                             </Row>
                             <Row className="g-4 mt-3">
@@ -373,12 +373,12 @@ function Main({globalState}) {
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-start">Our Latest Blog Idea</h1>
+                                    <h1 style={{fontSize: 60}} className="text-start">Our Latest Blog Idea</h1>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-end">UI/UX <strong>Trends</strong></h1>
+                                    <h1 style={{fontSize: 60}} className="text-end">UI/UX <strong>Trends</strong></h1>
                                 </Col>
                             </Row>
                             <Row xs={2} className="g-3">
@@ -417,12 +417,12 @@ function Main({globalState}) {
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-start">Have Any Project in</h1>
+                                    <h1 style={{fontSize: 60}} className="text-start">Have Any Project in</h1>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <h1 style={{fontSize: 80}} className="text-end">Mind, <strong>Lets Talk</strong></h1>
+                                    <h1 style={{fontSize: 60}} className="text-end">Mind, <strong>Lets Talk</strong></h1>
                                 </Col>
                             </Row>
                             <Row>
