@@ -1,0 +1,142 @@
+@mixin col($width) {
+    display: flex;
+    width: $width;
+}
+@mixin inner-container() {
+    >.row {
+        display: flex;
+        width: 100%;
+        >.col {
+            @include col(auto);
+        }
+        >.col-1 {
+            @include col(8.33%);
+        }
+        >.col-2 {
+            @include col(16.66%);
+        }
+        >.col-3 {
+            @include col(25%);
+        }
+        >.col-4 {
+            @include col(33.33%);
+        }
+        >.col-5 {
+            @include col(41.66%);
+        }
+        >.col-6 {
+            @include col(50%);
+        }
+        >.col-7 {
+            @include col(58.33%);
+        }
+        >.col-8 {
+            @include col(66.66%);
+        }
+        >.col-9 {
+            @include col(75%);
+        }
+        >.col-10 {
+            @include col(88.33%);
+        }
+        >.col-11 {
+            @include col(91.66%);
+        }
+        >.col-12 {
+            @include col(100%);
+        }
+    }
+}
+
+.container {
+    width: 60vw;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    @include inner-container();
+}
+
+.container-fluid {
+    width: 100%;
+    @include inner-container();
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+.justify-content-end {
+    justify-content: end;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.justify-content-around {
+    justify-content: space-around;
+}
+.justify-content-evenly {
+    justify-content: space-evenly;
+}
+
+.align-items-stretch {
+    align-items: stretch;
+}
+.align-items-start {
+    align-items: flex-start;
+}
+.align-items-end {
+    align-items: flex-end;
+}
+.align-items-center {
+    align-items: center;
+}
+.align-items-baseline {
+    align-items: baseline;
+}
+
+.g-1 {
+    gap: 10px 10px
+}
+.g-2 {
+    gap: 15px 15px
+}
+.g-3 {
+    gap: 20px 20px
+}
+.g-4 {
+    gap: 25px 25px
+}
+.g-5 {
+    gap: 30px 30px
+}
+.gx-1 {
+    gap: 0 10px
+}
+.gx-2 {
+    gap: 0 15px
+}
+.gx-3 {
+    gap: 0 20px
+}
+.gx-4 {
+    gap: 0 25px
+}
+.gx-5 {
+    gap: 0 30px
+}
+.gy-1 {
+    gap: 10px 0
+}
+.gy-2 {
+    gap: 15px 0
+}
+.gy-3 {
+    gap: 20px 0
+}
+.gy-4 {
+    gap: 25px 0
+}
+.gy-5 {
+    gap: 30px 0
+}
