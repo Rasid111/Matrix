@@ -5,6 +5,7 @@ import Info from './components/Info'
 import Nav from './components/Nav'
 import About from './components/About'
 import Contact from './components/Contact'
+import Notfound from './components/Notfound'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='*' element={<Notfound></Notfound>}></Route>
       </Routes>
     </BrowserRouter>
   )
