@@ -1,10 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
 import { Modal, Form, Button, Col, Container, Row, Card } from 'react-bootstrap';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import ProductPage from './components/ProductPage';
+import { LangContext } from './context/LangContext';
+import ControlPanel from './components/ControlPanel';
+import { ColorModeContext } from './context/ColorModeContext';
+import { CurrencyContext } from './context/CurrencyContext';
 
 function App() {
   const [state, setState] = useState({
@@ -18,6 +21,11 @@ function App() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState({ products: [], total: 0 });
   const [modal, setModal] = useState({ data: {}, show: false })
+
+  const lang = useContext(LangContext)[0];
+  const colorMode = useContext(ColorModeContext)[0];
+  const currency = useContext(CurrencyContext)[0]
+
   useEffect(() => {
     const url = 'https://dummyjson.com/products/categories';
     axios.get(url)
@@ -38,6 +46,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ControlPanel></ControlPanel>
       <Routes>
         <Route path="/" element={
           <>
@@ -48,11 +57,11 @@ function App() {
               <Modal.Body>
                 <img className='w-100 object-fit-contain' src={modal.data.thumbnail} alt="product" />
                 <p>{modal.data.description}</p>
-                <p>{modal.data.price}$</p>
+                <p>{Math.round(modal.data.price * (currency === "usd" ? 1 : 0.588) * 100) / 100}{currency === "usd" ? " USD" : " AZN"}</p>
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="secondary" onClick={() => setModal(prevState => ({ ...prevState, show: false }))}>
-                  Close
+                  {lang === "EN" ? "Close" : "Bagla"}
                 </Button>
               </Modal.Footer>
             </Modal>
@@ -60,7 +69,7 @@ function App() {
               <Container>
                 <Row>
                   <Col>
-                    <Form.Control type="text" value={state.searchInput} placeholder="Search" onInput={(ev) => {
+                    <Form.Control type="text" value={state.searchInput} placeholder={lang === "EN" ? "Search" : "Axtar"} onInput={(ev) => {
                       setState(prevState => ({
                         ...prevState,
                         searchInput: ev.target.value,
@@ -78,7 +87,7 @@ function App() {
                         category: ev.target.value
                       }));
                     }}>
-                      <option value="">All categories</option>
+                      <option value="">{lang === "EN" ? "All categories" : "Bütün kateqoriyalar"}</option>
                       {categories.map((c, index) =>
                         <option key={index} value={c.slug}>{c.name}</option>)}
                     </Form.Select>
@@ -91,11 +100,11 @@ function App() {
                         order: ev.target.value.split(";")[1]
                       }))
                     }}>
-                      <option value="">Unsorted</option>
-                      <option value="price;desc">By Price (from highest)</option>
-                      <option value="price;asc">By Price (from lowest)</option>
-                      <option value="title;asc">By Name (from A-Z)</option>
-                      <option value="title;desc">By Name (from Z-A)</option>
+                      <option value="">{lang === "EN" ? "Unsorted" : "Çeşidlənməmiş"}</option>
+                      <option value="price;desc">{lang === "EN" ? "By Price (from highest)" : "Qiymətə görə (ən yüksəkdən)"}</option>
+                      <option value="price;asc">{lang === "EN" ? "By Price (from lowest)" : "Qiymətə görə (ən aşağıdan)"}</option>
+                      <option value="title;asc">{lang === "EN" ? "By Name (from A to Z)" : "Ada görə (A-dan Z-yə)"}</option>
+                      <option value="title;desc">{lang === "EN" ? "By Name (from Z to A)" : "Ada görə (Z-dən A-ya)"}</option>
                     </Form.Select>
                   </Col>
                   <Col>
@@ -106,10 +115,10 @@ function App() {
                         limit: parseInt(ev.target.value)
                       }))
                     }}>
-                      <option value="8">8 items per page</option>
-                      <option value="16">16 items per page</option>
-                      <option value="24">24 items per page</option>
-                      <option value="32">32 items per page</option>
+                      <option value="8">8 {lang === "EN" ? "items per page" : "səhifə başına maddələr"}</option>
+                      <option value="16">16 {lang === "EN" ? "items per page" : "səhifə başına maddələr"}</option>
+                      <option value="24">24 {lang === "EN" ? "items per page" : "səhifə başına maddələr"}</option>
+                      <option value="32">32 {lang === "EN" ? "items per page" : "səhifə başına maddələr"}</option>
                     </Form.Select>
                   </Col>
                 </Row>
@@ -131,11 +140,11 @@ function App() {
                       <Card.Body>
                         <Card.Title>{p.title}</Card.Title>
                         <Card.Text>
-                          {p.price}$
+                          {Math.round(p.price * (currency === "usd" ? 1 : 0.588) * 100) / 100}{currency === "usd" ? " USD" : " AZN"}
                         </Card.Text>
-                        <Link className='btn btn-light' onClick={(ev) => {
+                        <Link className={`btn ${colorMode === "dark" ? 'btn-light' : "btn-dark"}`} onClick={(ev) => {
                           ev.stopPropagation();
-                        }} to={`/product/${p.id}`}>More</Link>
+                        }} to={`/product/${p.id}`}> {lang === "EN" ? "More" : "Daha çox"}</Link>
                       </Card.Body>
                     </Card>
                   </Col>)
@@ -147,7 +156,7 @@ function App() {
                 <Row className='row-cols-4 text-center justify-content-center g-3'>
                   {Array.from({ length: Math.ceil(products.total / state.limit) }, (_, index) => (
                     <Col key={index}>
-                      <Button className='btn-light' onClick={() => setState(prevState => ({ ...prevState, page: index + 1 }))}>{index + 1}</Button>
+                      <Button className={colorMode === "dark" ? 'btn-light' : "btn-dark"} onClick={() => setState(prevState => ({ ...prevState, page: index + 1 }))}>{index + 1}</Button>
                     </Col>
                   ))}
                 </Row>

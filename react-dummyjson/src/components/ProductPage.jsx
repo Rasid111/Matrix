@@ -1,11 +1,18 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom"
+import { LangContext } from "../context/LangContext";
+import { ColorModeContext } from "../context/ColorModeContext";
+import { CurrencyContext } from "../context/CurrencyContext";
 
 function ProductPage() {
     const params = useParams();
     const [productInfo, setProductInfo] = useState({});
+
+    const lang = useContext(LangContext)[0];
+    const colorMode = useContext(ColorModeContext)[0];
+    const currency = useContext(CurrencyContext)[0]
 
     useEffect(() => {
         axios.get(`https://dummyjson.com/products/${params.id}`)
@@ -20,7 +27,7 @@ function ProductPage() {
         <Container>
             <Row>
                 <Col>
-                    <Link className="btn btn-light mt-5" to="/">Back</Link>
+                    <Link className={`btn ${colorMode === "dark" ? "btn-light" : "btn-dark"} mt-5`} to="/">{lang === "EN" ? "Back" : "Dala"}</Link>
                 </Col>
             </Row>
             <Row className="mt-3">
@@ -33,7 +40,7 @@ function ProductPage() {
                         <img key={index} src={url} alt={`img${index}`} />
                     })}
                     <p>{productInfo.description}</p>
-                    <p>${productInfo.price}</p>
+                    <p>{Math.round(productInfo.price * (currency === "usd" ? 1 : 0.588) * 100) / 100}{currency === "usd" ? " USD" : " AZN"}</p>
                     <p className="mt-2">{productInfo.rating} / 5</p>
                     <Container fluid className="p-0">
                         <Row sm={1} className="g-3">
