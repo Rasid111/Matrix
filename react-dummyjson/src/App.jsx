@@ -9,8 +9,14 @@ import ControlPanel from './components/ControlPanel';
 import { ColorModeContext } from './context/ColorModeContext';
 import { CurrencyContext } from './context/CurrencyContext';
 import CurrencyAPI from '@everapi/currencyapi-js';
+import ClientSide from './components/ClientSide';
+import Cart from './components/Cart';
+import { useCart } from 'react-use-cart';
 
 function App() {
+
+  const { addItem } = useCart();
+
   const [state, setState] = useState({
     page: 1,
     limit: 8,
@@ -39,7 +45,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const client = new CurrencyAPI('cur_live_wFeoVDQippnLsVZw27pMvmUFQJluzzfrE5edPeNT')
+    const client = new CurrencyAPI({/*'cur_live_wFeoVDQippnLsVZw27pMvmUFQJluzzfrE5edPeNT'*/ })
     client.latest({
       base_currency: 'USD',
       currencies: 'AZN'
@@ -137,6 +143,18 @@ function App() {
                 </Row>
               </Container>
             </Form>
+            <Container>
+              <Row className='mt-4 justify-content-center text-center'>
+                <Col xs={3}>
+                  <Link className={`btn ${colorMode === "dark" ? "btn-light" : "btn-dark"}`} to="/client-side">Client-Side</Link>
+                </Col>
+              </Row>
+              <Row className='mt-4 justify-content-center text-center'>
+                <Col xs={3}>
+                  <Link className={`btn ${colorMode === "dark" ? "btn-light" : "btn-dark"}`} to="/cart">Cart</Link>
+                </Col>
+              </Row>
+            </Container>
             <Container className='mt-5'>
               <Row sm={1} md={2} lg={3} xl={4} className="g-5">
                 {products.products.map(p => (
@@ -161,6 +179,10 @@ function App() {
                         <Link className={`btn ${colorMode === "dark" ? 'btn-light' : "btn-dark"}`} onClick={(ev) => {
                           ev.stopPropagation();
                         }} to={`/product/${p.id}`}> {lang === "EN" ? "More" : "Daha çox"}</Link>
+                        <Button className={`ms-2 btn ${colorMode === "dark" ? 'btn-light' : "btn-dark"}`} onClick={(ev) => {
+                          ev.stopPropagation();
+                          addItem(p);
+                        }}>Add to cart</Button>
                       </Card.Body>
                     </Card>
                   </Col>)
@@ -181,6 +203,7 @@ function App() {
           </>}>
         </Route>
         <Route path='/product/:id' element={<ProductPage></ProductPage>}></Route>
+        <Route path='/client-side' element={<ClientSide></ClientSide>}></Route>
         <Route path="*" element={
           <>
             <Container className='text-center mt-5'>
@@ -196,7 +219,10 @@ function App() {
               </Row>
             </Container>
           </>
-        }></Route>
+        }>
+        </Route>
+        <Route path='/cart' element={<Cart></Cart>}>
+        </Route>
       </Routes>
     </ BrowserRouter>
   )
