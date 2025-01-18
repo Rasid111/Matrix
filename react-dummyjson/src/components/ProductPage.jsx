@@ -26,9 +26,11 @@ function ProductPage() {
     return (
         <Container>
             <Row>
-                <Col>
+                <Col sm={2}></Col>
+                <Col sm={8}>
                     <Link className={`btn ${colorMode === "dark" ? "btn-light" : "btn-dark"} mt-5`} to="/">{lang === "EN" ? "Back" : "Dala"}</Link>
                 </Col>
+                <Col sm={2}></Col>
             </Row>
             <Row className="mt-3">
                 <Col sm={2}></Col>

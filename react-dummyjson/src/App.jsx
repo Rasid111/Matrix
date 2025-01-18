@@ -8,6 +8,7 @@ import { LangContext } from './context/LangContext';
 import ControlPanel from './components/ControlPanel';
 import { ColorModeContext } from './context/ColorModeContext';
 import { CurrencyContext } from './context/CurrencyContext';
+import CurrencyAPI from '@everapi/currencyapi-js';
 
 function App() {
   const [state, setState] = useState({
@@ -18,6 +19,8 @@ function App() {
     sort: "",
     order: "",
   });
+
+  const [usdToAznRate, setUsdToAznRate] = useState(null);
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState({ products: [], total: 0 });
   const [modal, setModal] = useState({ data: {}, show: false })
@@ -34,6 +37,16 @@ function App() {
         console.log(response);
       })
   }, []);
+
+  useEffect(() => {
+    const client = new CurrencyAPI('cur_live_wFeoVDQippnLsVZw27pMvmUFQJluzzfrE5edPeNT')
+    client.latest({
+      base_currency: 'USD',
+      currencies: 'AZN'
+    }).then(response => {
+      setUsdToAznRate(response.data.AZN.value);
+    });
+  }, [])
 
   useEffect(() => {
     const url = `https://dummyjson.com/products${state.category === "" ? "" : `/category/${state.category}`}${state.searchInput === "" ? "" : `/search`}?q=${state.searchInput}&limit=${state.limit}&skip=${(state.page - 1) * state.limit}&select=id,title,price,thumbnail&sortBy=${state.sort}&order=${state.order}`
@@ -140,7 +153,10 @@ function App() {
                       <Card.Body>
                         <Card.Title>{p.title}</Card.Title>
                         <Card.Text>
-                          {Math.round(p.price * (currency === "usd" ? 1 : 0.588) * 100) / 100}{currency === "usd" ? " USD" : " AZN"}
+                          {currency === "usd" ?
+                            `${p.price} USD` :
+                            `${Math.round(p.price / usdToAznRate * 100) / 100} AZN`
+                          }
                         </Card.Text>
                         <Link className={`btn ${colorMode === "dark" ? 'btn-light' : "btn-dark"}`} onClick={(ev) => {
                           ev.stopPropagation();
@@ -165,6 +181,22 @@ function App() {
           </>}>
         </Route>
         <Route path='/product/:id' element={<ProductPage></ProductPage>}></Route>
+        <Route path="*" element={
+          <>
+            <Container className='text-center mt-5'>
+              <Row>
+                <Col>
+                  <h1>404</h1>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Link to="/">Go Back</Link>
+                </Col>
+              </Row>
+            </Container>
+          </>
+        }></Route>
       </Routes>
     </ BrowserRouter>
   )

@@ -7,7 +7,7 @@ export const ColorModeProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem('colorMode', 'dark');
         console.log(document.querySelector("html").attributes);
-        
+
         document.querySelector("html").setAttribute("data-bs-theme", "dark")
     }, [])
 
