@@ -12,7 +12,7 @@ function ProductPage() {
 
     const lang = useContext(LangContext)[0];
     const colorMode = useContext(ColorModeContext)[0];
-    const currency = useContext(CurrencyContext)[0]
+    const currency = useContext(CurrencyContext)[0];
 
     useEffect(() => {
         axios.get(`https://dummyjson.com/products/${params.id}`)
